@@ -62,7 +62,7 @@ def gN(Q):
     f_derive = math.exp(Q) + 0.5
     return Q - (f/f_derive)
 
-resultats_newton = pointfixe(gN, 1.0, 1e-8, 150)
+resultats_newton = pointfixe(gN, Q0, tolr, nmax_g1)
 
 def steff(g, Q):
     gQ = g(Q)
@@ -75,6 +75,6 @@ def g_steff1(Q): return steff(g1, Q)
 def g_steff2(Q): return steff(g2, Q)
 def g_steffN(Q): return steff(gN, Q)
 
-resultats_g_steff1 = pointfixe(g_steff1, 1.0, 1e-8, 150)
-resultats_g_steff2 = pointfixe(g_steff2, 1.0, 1e-8, 150)
-resultats_g_steffN = pointfixe(g_steffN, 1.0, 1e-8, 150)
+resultats_g_steff1 = pointfixe(g_steff1, Q0, tolr, nmax_g1)
+resultats_g_steff2 = pointfixe(g_steff2, Q0, tolr, nmax_g1)
+resultats_g_steffN = pointfixe(g_steffN, Q0, tolr, nmax_g1)
